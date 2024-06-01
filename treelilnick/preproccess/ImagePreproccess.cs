@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -34,33 +32,77 @@ namespace treelilnick.preproccess
 
             return BitmapSource.Create(width, height, originalImage.DpiX, originalImage.DpiY, PixelFormats.Bgra32, null, grayscalePixels, stride);
         }
-
-        public BitmapSource ApplyThreshold(BitmapSource grayscaleImage)
+        public static List<string> ConvertToASCII(BitmapSource grayscaleImage)
         {
+            List<string> result = [];
             int width = grayscaleImage.PixelWidth;
             int height = grayscaleImage.PixelHeight;
-            int stride = (width + 7) / 8; 
+            int stride = width * 4;
+            int paddedWidth = (width + 7) / 8;
 
             byte[] grayscalePixels = new byte[height * stride];
             grayscaleImage.CopyPixels(grayscalePixels, stride, 0);
 
-            byte[] binaryPixels = new byte[height * stride];
+            byte[] binaryPixels = new byte[height * paddedWidth];
 
             for (int y = 0; y < height; y++)
             {
                 for (int x = 0; x < width; x++)
                 {
-                    int grayscaleIndex = y * stride + x / 8;
+                    int grayscaleIndex = y * width + x;
                     int bitIndex = 7 - (x % 8);
 
-                    byte grayscaleValue = (byte)((grayscalePixels[grayscaleIndex] >> bitIndex) & 0x01);
+                    byte grayscaleValue = grayscalePixels[grayscaleIndex * 4 + 3];
                     byte thresholdValue = grayscaleValue <= 122 ? (byte)0 : (byte)1;
-
-                    binaryPixels[grayscaleIndex] |= (byte)(thresholdValue << bitIndex);
+                    binaryPixels[y * paddedWidth + x / 8] |= (byte)(thresholdValue << bitIndex);
                 }
             }
-            return BitmapSource.Create(width, height, grayscaleImage.DpiX, grayscaleImage.DpiY, PixelFormats.BlackWhite, null, binaryPixels, stride);
+
+            for (int i = 0; i < height; i++)
+            {
+                StringBuilder temp = new();
+                for (int j = 0; j < paddedWidth; j++)
+                {
+                    temp.Append((char)binaryPixels[i * paddedWidth + j]);
+                }
+                result.Add(temp.ToString());
+            }
+            return result;
+        }
+
+        public static string ConvertToASCIIString(BitmapSource grayscaleImage)
+        {
+            int width = grayscaleImage.PixelWidth;
+            int height = grayscaleImage.PixelHeight;
+            int stride = width * 4;
+            int paddedWidth = (width + 7) / 8;
+
+            byte[] grayscalePixels = new byte[height * stride];
+            grayscaleImage.CopyPixels(grayscalePixels, stride, 0);
+
+            byte[] binaryPixels = new byte[height * paddedWidth];
+
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    int grayscaleIndex = y * width + x;
+                    int bitIndex = 7 - (x % 8);
+
+                    byte grayscaleValue = grayscalePixels[grayscaleIndex * 4 + 3];
+                    byte thresholdValue = grayscaleValue <= 122 ? (byte)0 : (byte)1;
+                    binaryPixels[y * paddedWidth + x / 8] |= (byte)(thresholdValue << bitIndex);
+                }
+            }
+            StringBuilder res = new();
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < paddedWidth; j++)
+                {
+                    res.Append((char)binaryPixels[i * paddedWidth + j]);
+                }
+            }
+            return res.ToString();
         }
     }
-
 }
