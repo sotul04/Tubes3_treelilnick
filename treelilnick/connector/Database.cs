@@ -41,7 +41,11 @@ namespace treelilnick.connector
                 {
                     while (reader.Read())
                     {
+#pragma warning disable CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
                         data.Add(new Pair<string, string>(reader["berkas_citra"].ToString(), reader["nama"].ToString()));
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning restore CS8604 // Possible null reference argument.
                     }
                 }
             }
@@ -64,7 +68,11 @@ namespace treelilnick.connector
                 {
                     while (reader.Read())
                     {
+#pragma warning disable CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
                         pairs.Add(new Pair<string, string>(reader["nama"].ToString(), reader["NIK"].ToString()));
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning restore CS8604 // Possible null reference argument.
                     }
                 }
             }
@@ -84,17 +92,39 @@ namespace treelilnick.connector
                     {
                         if (reader.Read())
                         {
+#pragma warning disable CS8604 // Possible null reference argument.
                             biodata.Add(reader["NIK"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
                             biodata.Add(reader["nama"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
                             biodata.Add(reader["tempat_lahir"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
                             biodata.Add(reader["tanggal_lahir"].ToString().Substring(0,10));
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+#pragma warning disable CS8604 // Possible null reference argument.
                             biodata.Add(reader["jenis_kelamin"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
                             biodata.Add(reader["golongan_darah"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
                             biodata.Add(reader["alamat"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
                             biodata.Add(reader["agama"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
                             biodata.Add(reader["status_perkawinan"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
                             biodata.Add(reader["pekerjaan"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
                             biodata.Add(reader["kewarganegaraan"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
                         }
                     }
                 }
