@@ -12,6 +12,7 @@ using System.Windows.Shapes;
 using System.Data.SQLite;
 using treelilnick.connector;
 using System.Collections.Generic;
+using treelilnick.regex;
 
 namespace treelilnick
 {
@@ -33,7 +34,7 @@ namespace treelilnick
 
             // Show the current directory in a message box
             //MessageBox.Show("Current Directory: " + currentDirectory
-            if (isKMP.HasValue && (bool) isKMP)
+            if (isKMP.HasValue && (bool)isKMP)
             {
                 timeLabel.Text = "Checked";
             }
@@ -47,11 +48,24 @@ namespace treelilnick
             //{
             //    listView.Items.Add(pair.First + " : " + pair.Second);
             //}
-            List<string> data = conn.GetBioData("3173861753150743");
-            foreach (string s in data)
+            List<Pair<string, string>> listAlay = conn.GetNamaAndNIK();
+            Pair<string, string> matched;
+            try
             {
-                listView.Items.Add(s);
+                matched = AlayRegex.SearchAlay("Ab Roblin", listAlay);
+
+                List<string> data = conn.GetBioData(matched.Second);
+                foreach (string s in data)
+                {
+                    listView.Items.Add(s);
+                }
             }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+
+
         }
 
         private void ButtonUpload_Click(object sender, RoutedEventArgs e)
