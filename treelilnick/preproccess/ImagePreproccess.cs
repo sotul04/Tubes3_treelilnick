@@ -2,46 +2,59 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace treelilnick.preproccess
 {
     public class ImagePreproccess
+
     {
         public static BitmapSource ConvertToGrayscale(BitmapSource originalImage)
         {
+            PixelFormat format = originalImage.Format;
+            if (format == PixelFormats.Gray8 || format == PixelFormats.Gray16 || format == PixelFormats.Indexed8)
+            {
+                return originalImage;
+            }
             int width = originalImage.PixelWidth;
             int height = originalImage.PixelHeight;
-            int stride = width * 4; // 4 bytes
+            int bytesPerPixel = 4;
+            int stride = width * bytesPerPixel;
 
             byte[] pixels = new byte[height * stride];
             originalImage.CopyPixels(pixels, stride, 0);
 
-            byte[] grayscalePixels = new byte[height * stride];
+            byte[] grayscalePixels = new byte[height * width];
 
-            for (int i = 0; i < pixels.Length; i += 4)
+            for (int y = 0; y < height; y++)
             {
-                byte gray = (byte)(pixels[i] * 0.3 + pixels[i + 1] * 0.59 + pixels[i + 2] * 0.11);
+                for (int x = 0; x < width; x++)
+                {
+                    int index = y * stride + x * bytesPerPixel;
+                    byte blue = pixels[index];
+                    byte green = pixels[index + 1];
+                    byte red = pixels[index + 2];
 
-                grayscalePixels[i] = gray; // Red 
-                grayscalePixels[i + 1] = gray; // Green 
-                grayscalePixels[i + 2] = gray; // Blue 
-                grayscalePixels[i + 3] = pixels[i + 3]; // Alpha 
+                    byte gray = (byte)(red * 0.3 + green * 0.59 + blue * 0.11);
+
+                    grayscalePixels[y * width + x] = gray;
+                }
             }
 
-            return BitmapSource.Create(width, height, originalImage.DpiX, originalImage.DpiY, PixelFormats.Bgra32, null, grayscalePixels, stride);
+            return BitmapSource.Create(width, height, originalImage.DpiX, originalImage.DpiY, PixelFormats.Gray8, null, grayscalePixels, width);
         }
         public static List<string> ConvertToASCII(BitmapSource grayscaleImage)
         {
             List<string> result = [];
             int width = grayscaleImage.PixelWidth;
             int height = grayscaleImage.PixelHeight;
-            int stride = width * 4;
             int paddedWidth = (width + 7) / 8;
 
-            byte[] grayscalePixels = new byte[height * stride];
-            grayscaleImage.CopyPixels(grayscalePixels, stride, 0);
+            byte[] grayscalePixels = new byte[height * width];
+            grayscaleImage.CopyPixels(grayscalePixels, width, 0);
 
             byte[] binaryPixels = new byte[height * paddedWidth];
 
@@ -52,8 +65,8 @@ namespace treelilnick.preproccess
                     int grayscaleIndex = y * width + x;
                     int bitIndex = 7 - (x % 8);
 
-                    byte grayscaleValue = grayscalePixels[grayscaleIndex * 4 + 3];
-                    byte thresholdValue = grayscaleValue <= 122 ? (byte)0 : (byte)1;
+                    byte grayscaleValue = grayscalePixels[grayscaleIndex];
+                    byte thresholdValue = grayscaleValue <= 122 ? (byte)1 : (byte)0;
                     binaryPixels[y * paddedWidth + x / 8] |= (byte)(thresholdValue << bitIndex);
                 }
             }
@@ -74,11 +87,10 @@ namespace treelilnick.preproccess
         {
             int width = grayscaleImage.PixelWidth;
             int height = grayscaleImage.PixelHeight;
-            int stride = width * 4;
             int paddedWidth = (width + 7) / 8;
 
-            byte[] grayscalePixels = new byte[height * stride];
-            grayscaleImage.CopyPixels(grayscalePixels, stride, 0);
+            byte[] grayscalePixels = new byte[height * width];
+            grayscaleImage.CopyPixels(grayscalePixels, width, 0);
 
             byte[] binaryPixels = new byte[height * paddedWidth];
 
@@ -89,8 +101,8 @@ namespace treelilnick.preproccess
                     int grayscaleIndex = y * width + x;
                     int bitIndex = 7 - (x % 8);
 
-                    byte grayscaleValue = grayscalePixels[grayscaleIndex * 4 + 3];
-                    byte thresholdValue = grayscaleValue <= 122 ? (byte)0 : (byte)1;
+                    byte grayscaleValue = grayscalePixels[grayscaleIndex];
+                    byte thresholdValue = grayscaleValue <= 122 ? (byte)1 : (byte)0;
                     binaryPixels[y * paddedWidth + x / 8] |= (byte)(thresholdValue << bitIndex);
                 }
             }

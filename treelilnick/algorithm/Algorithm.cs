@@ -7,7 +7,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 
-namespace treelilnick.preproccess
+namespace treelilnick.algorithm
 {
     public class KMP
     {

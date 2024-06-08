@@ -50,10 +50,10 @@ namespace treelilnick.connector
                 }
             }
 
-            if (data.Count > 0)
-            {
-                MessageBox.Show(data[0].First + " " + data[0].Second);
-            }
+            // if (data.Count > 0)
+            // {
+            //     MessageBox.Show(data[0].First + " " + data[0].Second);
+            // }
 
             return data;
         }
