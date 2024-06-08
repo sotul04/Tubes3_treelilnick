@@ -48,35 +48,38 @@ namespace treelilnick
             //{
             //    listView.Items.Add(pair.First + " : " + pair.Second);
             //}
-            List<Pair<string, string>> listAlay = conn.GetNamaAndNIK();
-            Pair<string, string> matched;
-            try
+            //List<Pair<string, string>> listAlay = conn.GetNamaAndNIK();
+            //Pair<string, string> matched;
+            List<Pair<string, string>> pragma = conn.GetDataSidikJari();
+            foreach(Pair<string, string> pair in pragma)
             {
-                matched = AlayRegex.SearchAlay("Ab Roblin", listAlay);
-
-                List<string> data = conn.GetBioData(matched.Second);
-                foreach (string s in data)
-                {
-                    listView.Items.Add(s);
-                }
+                listView.Items.Add(pair.Second + " : " + pair.First);
             }
-            catch (Exception err)
-            {
-                Console.WriteLine(err.Message);
-            }
+            //try
+            //{
+            //    matched = AlayRegex.SearchAlay("Ab Roblin", listAlay);
 
-
+            //    List<string> data = conn.GetBioData(matched.Second);
+            //    foreach (string s in data)
+            //    {
+            //        listView.Items.Add(s);
+            //    }
+            //}
+            //catch (Exception err)
+            //{
+            //    Console.WriteLine(err.Message);
+            //}
         }
 
         private void ButtonUpload_Click(object sender, RoutedEventArgs e)
         {
-            //OpenFileDialog openFileDialog = new OpenFileDialog();
-            //openFileDialog.Filter = "Image files | *.bmp;*.jpg;*.png";
-            //openFileDialog.FilterIndex = 1;
-            //if (openFileDialog.ShowDialog() == true)
-            //{
-            //    inputImage.Source = new BitmapImage(new Uri(openFileDialog.FileName));
-            //}
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files | *.bmp;*.jpg;*.png";
+            openFileDialog.FilterIndex = 1;
+            if (openFileDialog.ShowDialog() == true)
+            {
+                inputImage.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+            }
             listView.Items.Clear();
         }
 
