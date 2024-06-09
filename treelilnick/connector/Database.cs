@@ -79,6 +79,18 @@ namespace treelilnick.connector
             return pairs;
         }
 
+        public static int NIK = 0;
+        public static int NAMA = 1;
+        public static int TEMPAT_LAHIR = 2;
+        public static int TANGGAL_LAHIR = 3;
+        public static int JENIS_KELAMIN = 4;
+        public static int GOLONGAN_DARAH = 5;
+        public static int ALAMAT = 6;
+        public static int AGAMA = 7;
+        public static int STATUS_PERKAWINAN = 8;
+        public static int PEKERJAAN = 9;
+        public static int KEWARGANEGARAAN = 10;
+
         public List<string> GetBioData(string nik)
         {
             List<string> biodata = new List<string>();

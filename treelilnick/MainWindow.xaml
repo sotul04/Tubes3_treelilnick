@@ -400,9 +400,9 @@
         </Grid.RowDefinitions>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="40*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
@@ -426,7 +426,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="List Biodata" FontSize="14" Height="20" Foreground="White" HorizontalAlignment="Center"/>
-                <ListView Margin="10 0 10 10" Grid.Row="1" Name="listView" Background="Transparent" Foreground="White" BorderBrush="Black">
+                <ListView Margin="10 0 10 10" Grid.Row="1" Name="listView" Background="Transparent" Foreground="White" BorderBrush="Black" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <ListView.Resources>
                         <!-- Applying ScrollBar style to ListView -->
                         <Style TargetType="{x:Type ScrollBar}" BasedOn="{StaticResource {x:Type ScrollBar}}"/>
