@@ -1,7 +1,36 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\IF\\Semester4\\stime\\Tubes3_treelilnick\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CC7A2788-0DF2-4C11-9275-9D361E61697D}|src\\treelilnick.csproj|d:\\if\\semester4\\stime\\tubes3_treelilnick\\src\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CC7A2788-0DF2-4C11-9275-9D361E61697D}|src\\treelilnick.csproj|solutionrelative:src\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC7A2788-0DF2-4C11-9275-9D361E61697D}|src\\treelilnick.csproj|d:\\if\\semester4\\stime\\tubes3_treelilnick\\src\\imageloader\\imageloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC7A2788-0DF2-4C11-9275-9D361E61697D}|src\\treelilnick.csproj|solutionrelative:src\\imageloader\\imageloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC7A2788-0DF2-4C11-9275-9D361E61697D}|src\\treelilnick.csproj|d:\\if\\semester4\\stime\\tubes3_treelilnick\\src\\preproccess\\imagepreproccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC7A2788-0DF2-4C11-9275-9D361E61697D}|src\\treelilnick.csproj|solutionrelative:src\\preproccess\\imagepreproccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC7A2788-0DF2-4C11-9275-9D361E61697D}|src\\treelilnick.csproj|d:\\if\\semester4\\stime\\tubes3_treelilnick\\src\\regex\\regex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC7A2788-0DF2-4C11-9275-9D361E61697D}|src\\treelilnick.csproj|solutionrelative:src\\regex\\regex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC7A2788-0DF2-4C11-9275-9D361E61697D}|src\\treelilnick.csproj|d:\\if\\semester4\\stime\\tubes3_treelilnick\\src\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC7A2788-0DF2-4C11-9275-9D361E61697D}|src\\treelilnick.csproj|solutionrelative:src\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC7A2788-0DF2-4C11-9275-9D361E61697D}|src\\treelilnick.csproj|d:\\if\\semester4\\stime\\tubes3_treelilnick\\src\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC7A2788-0DF2-4C11-9275-9D361E61697D}|src\\treelilnick.csproj|solutionrelative:src\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC7A2788-0DF2-4C11-9275-9D361E61697D}|src\\treelilnick.csproj|d:\\if\\semester4\\stime\\tubes3_treelilnick\\src\\connector\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC7A2788-0DF2-4C11-9275-9D361E61697D}|src\\treelilnick.csproj|solutionrelative:src\\connector\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +38,101 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ImageLoader.cs",
+              "DocumentMoniker": "D:\\IF\\Semester4\\stime\\Tubes3_treelilnick\\src\\imageloader\\ImageLoader.cs",
+              "RelativeDocumentMoniker": "src\\imageloader\\ImageLoader.cs",
+              "ToolTip": "D:\\IF\\Semester4\\stime\\Tubes3_treelilnick\\src\\imageloader\\ImageLoader.cs",
+              "RelativeToolTip": "src\\imageloader\\ImageLoader.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T03:38:15.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ImagePreproccess.cs",
+              "DocumentMoniker": "D:\\IF\\Semester4\\stime\\Tubes3_treelilnick\\src\\preproccess\\ImagePreproccess.cs",
+              "RelativeDocumentMoniker": "src\\preproccess\\ImagePreproccess.cs",
+              "ToolTip": "D:\\IF\\Semester4\\stime\\Tubes3_treelilnick\\src\\preproccess\\ImagePreproccess.cs",
+              "RelativeToolTip": "src\\preproccess\\ImagePreproccess.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T03:38:11.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Regex.cs",
+              "DocumentMoniker": "D:\\IF\\Semester4\\stime\\Tubes3_treelilnick\\src\\regex\\Regex.cs",
+              "RelativeDocumentMoniker": "src\\regex\\Regex.cs",
+              "ToolTip": "D:\\IF\\Semester4\\stime\\Tubes3_treelilnick\\src\\regex\\Regex.cs",
+              "RelativeToolTip": "src\\regex\\Regex.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T03:37:26.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "D:\\IF\\Semester4\\stime\\Tubes3_treelilnick\\src\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "src\\AssemblyInfo.cs",
+              "ToolTip": "D:\\IF\\Semester4\\stime\\Tubes3_treelilnick\\src\\AssemblyInfo.cs",
+              "RelativeToolTip": "src\\AssemblyInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T03:37:23.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\IF\\Semester4\\stime\\Tubes3_treelilnick\\src\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "src\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\IF\\Semester4\\stime\\Tubes3_treelilnick\\src\\MainWindow.xaml.cs",
+              "RelativeToolTip": "src\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T03:36:51.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Database.cs",
+              "DocumentMoniker": "D:\\IF\\Semester4\\stime\\Tubes3_treelilnick\\src\\connector\\Database.cs",
+              "RelativeDocumentMoniker": "src\\connector\\Database.cs",
+              "ToolTip": "D:\\IF\\Semester4\\stime\\Tubes3_treelilnick\\src\\connector\\Database.cs",
+              "RelativeToolTip": "src\\connector\\Database.cs",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAcwFwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T03:36:39.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\IF\\Semester4\\stime\\Tubes3_treelilnick\\src\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "src\\MainWindow.xaml",
+              "ToolTip": "D:\\IF\\Semester4\\stime\\Tubes3_treelilnick\\src\\MainWindow.xaml",
+              "RelativeToolTip": "src\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-09T03:36:24.671Z",
+              "EditorCaption": ""
             }
           ]
         }
