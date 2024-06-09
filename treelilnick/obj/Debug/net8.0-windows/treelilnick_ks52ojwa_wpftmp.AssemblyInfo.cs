@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("treelilnick")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d03c62b31b942c16f338ac9e700dc34e4f6d1811")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3cf0e7db6f207f9617fc059c0311c1b24de13917")]
 [assembly: System.Reflection.AssemblyProductAttribute("treelilnick")]
 [assembly: System.Reflection.AssemblyTitleAttribute("treelilnick")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
