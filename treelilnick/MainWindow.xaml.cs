@@ -16,6 +16,7 @@ using treelilnick.imageloader;
 using treelilnick.preproccess;
 using treelilnick.algorithm;
 using treelilnick.regex;
+using treelilnick.decryptor;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 
@@ -117,15 +118,15 @@ namespace treelilnick
                     List<string> data = conn.GetBioData(matched.Second);
                     listView.Items.Add("NIK:\t\t\t"+data[Database.NIK]);
                     listView.Items.Add("Nama:\t\t\t"+pairs[indexFound].Second);
-                    listView.Items.Add("Tempat Lahir:\t\t"+data[Database.TEMPAT_LAHIR]);
+                    listView.Items.Add("Tempat Lahir:\t\t"+Decrypt.DecryptCipher(data[Database.TEMPAT_LAHIR]));
                     listView.Items.Add("Tanggal Lahir:\t\t"+data[Database.TANGGAL_LAHIR]);
                     listView.Items.Add("Jenis Kelamin:\t\t"+data[Database.JENIS_KELAMIN]);
                     listView.Items.Add("Golongan Darah:\t\t"+data[Database.GOLONGAN_DARAH]);
-                    listView.Items.Add("Alamat:\t\t\t"+data[Database.ALAMAT]);
-                    listView.Items.Add("Agama:\t\t\t"+data[Database.AGAMA]);
+                    listView.Items.Add("Alamat:\t\t\t"+Decrypt.DecryptCipher(data[Database.ALAMAT]));
+                    listView.Items.Add("Agama:\t\t\t"+Decrypt.DecryptCipher(data[Database.AGAMA]));
                     listView.Items.Add("Status Perkawinan:\t"+data[Database.STATUS_PERKAWINAN]);
-                    listView.Items.Add("Pekerjaan:\t\t"+data[Database.PEKERJAAN]);
-                    listView.Items.Add("Kewarganegaraan:\t"+data[Database.KEWARGANEGARAAN]);
+                    listView.Items.Add("Pekerjaan:\t\t"+Decrypt.DecryptCipher(data[Database.PEKERJAAN]));
+                    listView.Items.Add("Kewarganegaraan:\t"+Decrypt.DecryptCipher(data[Database.KEWARGANEGARAAN]));
                 }
                 catch (Exception)
                 {
