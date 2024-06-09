@@ -67,7 +67,7 @@ namespace treelilnick
                     BitmapSource imageBitmap = ImageLoader.LoadImage(imagePath);
                     BitmapSource imageGrayScale = ImagePreproccess.ConvertToGrayscale(imageBitmap);
                     string text = ImagePreproccess.ConvertToASCIIString(imageGrayScale);
-                    if (isKMP.HasValue && (bool)isKMP)
+                    if (isKMP.HasValue && (bool)!isKMP)
                     {
                         found = KMP.FindPattern(text, pattern);
                     }
