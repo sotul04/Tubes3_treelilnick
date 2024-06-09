@@ -53,27 +53,11 @@ namespace treelilnick
                 var stopwatch = new Stopwatch();
                 stopwatch.Start();
                 BitmapSource queryGrayScale = ImagePreproccess.ConvertToGrayscale(queryImage);
-                List<string> queryAscii = ImagePreproccess.ConvertToASCII(queryGrayScale);
-                string queryAsciiString = String.Join("", queryAscii);
-                string midQueryInit = queryAscii[queryAscii.Count / 2];
-                int queryAsciiWidth = midQueryInit.Length;
-                StringBuilder temp = new();
-                int i = 1;
-
-                for (; i < queryAsciiWidth - 6; i++)
-                {
-                    if (midQueryInit[i] != 0) break;
-                }
-
-                for (int j = 0; j < 6; j++)
-                {
-                    temp.Append(midQueryInit[i + j]);
-                }
-
-                string pattern = temp.ToString();
+                string pattern = ImagePreproccess.ConvertToASCIIPattern(queryGrayScale);
                 bool found = false;
                 int indexFound = -1;
                 double maxPercentage = 0;
+                int i = 0;
 
                 for (i = 0; i < pairs.Count; i++)
                 {
@@ -100,6 +84,7 @@ namespace treelilnick
 
                 if (!found)
                 {
+                    string queryAsciiString = ImagePreproccess.ConvertToASCIIString(queryGrayScale);
                     for (i = 0; i < pairs.Count; i++)
                     {
                         string imagePath = pairs[i].First;
