@@ -26,7 +26,8 @@ identitas seseorang secara lengkap hanya dengan menggunakan sidik jari.
 <h2 id="tech-stack">💻 Tech Stack</h2>
 
 - C#
-- .NET
+- .NET 8.0
+- SQLite
 
 <h2 id="how-to-run">🏃 How To Run</h2>
 
@@ -43,13 +44,15 @@ https://github.com/sotul04/Tubes3_treelilnick
 
 1. Klik tombol "Choose Image" dan pilih gambar sidik jari yang ingin dicari
 
+   ![choose_image](https://github.com/sotul04/Tubes3_treelilnick/blob/main/img/sample1.png)
    
 2. Pilih algoritma yang diinginkan menggunakan _toggle_
-   
 
+   ![choose_image](https://github.com/sotul04/Tubes3_treelilnick/blob/main/img/sample2.png)
    
 3. Klik tombol "Search" untuk melihat hasil
-   
+
+   ![choose_image](https://github.com/sotul04/Tubes3_treelilnick/blob/main/img/sample3.png)
 
 
 <h2 id="author">🤵 Contributors</h2>
